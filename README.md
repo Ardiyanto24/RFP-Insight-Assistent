@@ -65,27 +65,42 @@ Aplikasi ini menggabungkan:
 
 ## 🏗️ Architecture Overview
 ```
-app.py
- ├── ingestion/
- │   ├── pdf_loader.py        # PDF → PageText
- │   ├── text_cleaner.py
- │   └── language.py          # Language & scan detection
- │
- ├── extraction/
- │   ├── analyzer.py          # Whole-doc LLM extraction
- │   └── evidence_builder.py  # Page + snippet evidence
- │
- ├── rag/
- │   ├── indexing.py          # Chunking + embedding + index
- │   └── chat_engine.py       # Retrieval + Gemini generation
- │
- ├── ui/
- │   ├── state.py             # Session-state contract
- │   ├── messages.py          # Copywriting & UX text
- │   └── components.py        # Dashboard layout
- │
- └── utils/
-     └── error_handling.py
+RFP_INSIGHT/
+├── .streamlit/
+│ ├── config.toml
+│ └── secrets.toml
+├── scripts/
+│ ├── list_models.py
+│ └── test_generate.py
+├── src/rfp_insight/
+│ ├── config/
+│ │ ├── prompts.py
+│ │ └── settings.py
+│ ├── extraction/
+│ │ ├── analyzer.py
+│ │ ├── evidence_builder.py
+│ │ └── validators.py
+│ ├── ingestion/
+│ │ ├── pdf_loader.py
+│ │ ├── text_cleaner.py
+│ │ └── language.py
+│ ├── rag/
+│ │ ├── indexing.py
+│ │ ├── chat_engine.py
+│ │ ├── guardrails.py
+│ │ └── schemas.py
+│ ├── ui/
+│ │ ├── state.py
+│ │ ├── messages.py
+│ │ ├── components.py
+│ │ └── page_preview.py
+│ └── utils/
+│ ├── error_handling.py
+│ └── types.py
+├── app.py
+├── requirements.txt
+├── .env.example
+└── README.md
 ```
 
 **Design principles:**
