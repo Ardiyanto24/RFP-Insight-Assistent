@@ -1,6 +1,6 @@
 # RFP Insight
 
-![App Interface](screenshot.png)
+![App Interface](Screenshot.png)
 
 **AI-Powered RFP Analyzer & Chat Assistant (RAG-based)**
 
